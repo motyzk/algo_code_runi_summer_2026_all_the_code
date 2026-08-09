@@ -43,10 +43,12 @@ class Solution:
         return pos_result - neg_result
 
 
+    # inpolite engineering-wise
     def singleNumber(self, nums):
         # 1 sort the array
         nums.sort()
         # 2 if the array only has one number - return it
+        # (no need, already covered)
         # if len(nums) == 1:
         #     return nums[0]
         # 3 go over the list and compare every
@@ -58,6 +60,7 @@ class Solution:
         return nums[-1]
 
 
+    # more polite, but more time complexity
     def singleNumber(self, nums):
         # 1 sort the array
         nums = sorted(nums)
