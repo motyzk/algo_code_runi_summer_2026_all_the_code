@@ -15,8 +15,6 @@ def fib(n):
 
 
 memo = {}
-
-
 def fib(n):
     if n < 3:
         return 1
@@ -26,8 +24,6 @@ def fib(n):
 
 
 memo = {1: 1, 2: 1}
-
-
 def fib(n):
     if n not in memo:
         memo[n] = fib(n - 2) + fib(n - 1)
@@ -37,9 +33,7 @@ def fib(n):
 assert fib(2) == 1
 assert fib(3) == 2
 assert fib(4) == 3
-
-
-# print(fib(60))
+print(fib(60))
 
 
 def my_sum(l):
@@ -48,6 +42,7 @@ def my_sum(l):
     return l[0] + my_sum(l[1:])
 
 
+# enables TCO
 def my_sum(l, carry=0):
     if not len(l):
         return carry
@@ -60,6 +55,9 @@ def my_sum(l):
             return 0
         return l[i] + helper(i+1)
     return helper(0)
+
+
+# TODO homework - write code the only uses indices (no extra space) and enables TCO
 
 
 nums = [1, 2, 3, 4, 6, 7, 90]
