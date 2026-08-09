@@ -72,11 +72,16 @@ nums = [1, 2, 3, 4, 6, 7, 90, 1, 2, 3, 4, 6, 7, 90]
 assert my_sum(nums) == sum(nums)
 
 
-def flip_in_pairs(n):
-    pass
+def flip_in_pairs(num):
+    if num < 10:
+        return num
+    last_dig = num % 10
+    before_last = (num % 100) // 10
+    return 10 * last_dig + before_last + 100 * flip_in_pairs(num // 100)
 
 
 assert flip_in_pairs(2841) == 8214
+assert flip_in_pairs(12841) == 18214
 assert flip_in_pairs(9) == 9
 assert flip_in_pairs(90) == 9
 assert flip_in_pairs(123) == 132
