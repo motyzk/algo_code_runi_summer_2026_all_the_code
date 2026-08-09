@@ -42,6 +42,37 @@ class Solution:
             neg_result += (neg_curr % 2) * (2 ** i)
         return pos_result - neg_result
 
+
+    def singleNumber(self, nums):
+        # 1 sort the array
+        nums.sort()
+        # 2 if the array only has one number - return it
+        # if len(nums) == 1:
+        #     return nums[0]
+        # 3 go over the list and compare every
+        # number on an even index - to the following number
+        for i in range(0, len(nums)-1, 2):
+            if nums[i] != nums[i+1]:
+                return nums[i]
+        # 3.1 if you didn't find the single number - it's the last number
+        return nums[-1]
+
+
+    def singleNumber(self, nums):
+        # 1 sort the array
+        nums = sorted(nums)
+        # 2 if the array only has one number - return it
+        # if len(nums) == 1:
+        #     return nums[0]
+        # 3 go over the list and compare every
+        # number on an even index - to the following number
+        for i in range(0, len(nums)-1, 2):
+            if nums[i] != nums[i+1]:
+                return nums[i]
+        # 3.1 if you didn't find the single number - it's the last number
+        return nums[-1]
+
+
 s = Solution()
 assert s.singleNumber([2, 2, 1]) == 1
 assert s.singleNumber([2, 2, -1]) == -1
