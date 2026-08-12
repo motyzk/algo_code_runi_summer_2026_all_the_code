@@ -73,7 +73,7 @@ class Solution:
         return False
 
 
-# O(n*(max(n)-min(n)))
+# O(n*(max(n)-min(n))) time, O(max(n)-min(n)) space
 class Solution:
     def find132pattern(self, nums):
         if len(nums) < 3:
@@ -92,6 +92,16 @@ class Solution:
             if nums[i] < curr_range_min:
                 curr_range_min = curr_range_max = nums[i]
         return False
+
+
+# algorithm with no code - does it work??? think about it
+# if it works - implement it. if it doesn't - find an input that demonstrates it.
+# find the max1, find the max2 in the subarray right to the max1, then look in the subarray left to max1,
+# for a number smaller than max2. if you didn't find any - run this algorithm on the subarray left to max1 and the
+# subarray right to max1
+# class Solution:
+#     def find132pattern(self, nums):
+#         TODO implement
 
 
 s = Solution()
