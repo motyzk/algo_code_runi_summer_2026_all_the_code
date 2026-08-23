@@ -1,5 +1,12 @@
 # https://leetcode.com/problems/couples-holding-hands/description/
 
+# brute force approach - go over all the swap possibilities and choose the option with the fewest swaps that
+# results every couple sitting side by side
+# not TODO
+
+# O(n**2)
+# TODO
+
 # O(n) time, O(n) space
 class Solution:
     def minSwapsCouples(self, row):
