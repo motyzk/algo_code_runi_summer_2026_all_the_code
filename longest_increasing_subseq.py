@@ -16,6 +16,35 @@ class Solution:
         return len(max(sequences, key=len))
 
 
+class Solution:
+    def lengthOfLIS(self, nums):
+        if not nums:
+            return 0
+        longest_by_end = []
+        for i in range(len(nums)):
+            longest_by_end.append(1)
+            for j in range(i):
+                if nums[j] < nums[i]:
+                    longest_by_end[i] = max(
+                        longest_by_end[i],
+                        longest_by_end[j] + 1
+                    )
+        return max(longest_by_end)
+
+
+import bisect
+class Solution:
+    def lengthOfLIS(self, nums):
+        longest = []
+        for n in nums:
+            i = bisect.bisect_left(longest, n)
+            if i == len(longest):
+                longest.append(n)
+            longest[i] = n
+        return len(longest)
+
+
+
 s = Solution()
 assert s.lengthOfLIS([1,2]) == 2
 assert s.lengthOfLIS([20,1,2,3]) == 3
