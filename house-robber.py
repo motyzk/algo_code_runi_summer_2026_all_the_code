@@ -22,6 +22,7 @@ class Solution:
         return memo[-1]
 
 
+# TODO improve! keys better be indices rather than looooooooong keys that deteriorate the hashmap performance
 class Solution:
     def __init__(self):
         self.cache = {}

@@ -14,6 +14,7 @@ def solve(values, weights, limit):
     return table[-1][-1]
 
 
+# more space efficient
 def solve(values, weights, limit):
     table = [0 for _ in range(limit + 1)]
     for j in range(1, len(values) + 1):

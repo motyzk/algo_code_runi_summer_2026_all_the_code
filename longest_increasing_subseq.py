@@ -16,6 +16,7 @@ class Solution:
         return len(max(sequences, key=len))
 
 
+# dynamic, O(n**2) time, O(n) space
 class Solution:
     def lengthOfLIS(self, nums):
         if not nums:
@@ -32,6 +33,7 @@ class Solution:
         return max(longest_by_end)
 
 
+# not dynamic, O(nlogn) time, O(n) space
 import bisect
 class Solution:
     def lengthOfLIS(self, nums):
